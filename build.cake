@@ -209,7 +209,7 @@ Task("ZipArtifacts")
 {
     Zip(outputPath, zipFileName);
 });
-
+// Upload Artifacts
 Task("UploadArtifacts")
     .IsDependentOn("ZipArtifacts")
     .WithCriteria(BuildSystem.IsRunningOnAzurePipelinesHosted)
